@@ -33,10 +33,10 @@ StarWars = (function() {
             }, this));
 
             // Reset l'animation et montre l'ecran de départ
-            $(this.audio).bind('ended', $.proxy(function () {
-                this.audio.currentTime = 0;
-                this.reset();
-            }, this));
+//             $(this.audio).bind('ended', $.proxy(function () {
+//                 this.audio.currentTime = 0;
+//                 this.reset();
+//             }, this));
         }
              
         // Relance l'animation et montre l'ecran de départ
