@@ -248,7 +248,7 @@ body {
   
   position: absolute;
   animation: Anim1 1s infinite alternate;
-pointer-events: none;
+  pointer-events: none;
 }
 
 .cursor::before {
