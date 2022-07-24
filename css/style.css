@@ -1,4 +1,3 @@
-@import "compass/css3";
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
 nav{
@@ -6,8 +5,8 @@ nav{
 }    
 nav ul li {
     display: inline-block;
-    
-}    
+}
+
 
 
 html,
@@ -20,7 +19,27 @@ body {
   background: #000;
   overflow: hidden;
   margin: 0;
+  cursor: none;
+  overflow: hidden;
+  border-left-style: groove;
 }
+
+
+
+/* .laser{
+  position: absolute;
+  width: 14.65em;
+  margin: 0 0 0 -7.325em;
+  top: auto;
+  bottom: 0;
+  height: 50em;
+  font-size: 350%;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+  
+} */
 
 .starwars section {
   position: absolute;
@@ -34,7 +53,6 @@ body {
   width: 14em;
   margin: -4em 0 0 -7em;
   text-align: center;
-  cursor: pointer;
   opacity: 0;
   -webkit-animation: intro 4s ease-out 1s;
           animation: intro 4s ease-out 1s;
@@ -84,6 +102,57 @@ body {
   line-height: 1.35em;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 1px dashed white; 
+  position: absolute;
+  animation: Anim1 1s infinite alternate;
+pointer-events: none;
+}
+
+.cursor::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 5px;
+  height: 5px;
+  background: crimson;
+
+}
+
+.expand {
+  animation: Anim2 .5s;
+  background: crimson;
+  border: 3px solid crimson;
+  border-radius : 50%;
+}
+@keyframes Anim1 {
+  from {
+      transform: scale(1) ;
+  }
+  to {
+      transform: scale(0.7) ;
+  }
+}
+
+@keyframes Anim2 {
+  0%{
+
+      transform: scale(1);
+  }
+  50%{
+
+      transform: scale(2);
+  }
+  100%{
+      transform: scale(1);
+      opacity:0;
+  }
 }
 
 @-webkit-keyframes intro {
@@ -240,56 +309,3 @@ body {
       transform: translateY(-2000px);
     }
   }
-
-.cursor {
-  width: 40px;
-  height: 40px;
-  border: 1px dashed white;
-  
-  position: absolute;
-  animation: Anim1 1s infinite alternate;
-  pointer-events: none;
-}
-
-.cursor::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 5px;
-  height: 5px;
-  background: crimson;
-
-}
-
-.expand {
-  animation: Anim2 .5s;
-  background: crimson;
-  border: 3px solid crimson;
-  border-radius : 50%;
-}
-@keyframes Anim1 {
-  from {
-      transform: scale(1) ;
-  }
-  to {
-      transform: scale(0.7) ;
-  }
-}
-
-@keyframes Anim2 {
-  0%{
-      transform: scale(1);
-  }
-  50%{
-      transform: scale(2);
-  }
-  100%{
-      transform: scale(1);
-      opacity:0;
-  }
-}
-
-
-
